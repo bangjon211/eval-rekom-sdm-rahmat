@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluasi & Rekomendasi Program SDM - SD Plus Rahmat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        /* Mengubah warna pattern latar belakang menjadi kebiruan */
+        .bg-pattern { background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232563eb' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+        /* Styling khusus untuk scrollbar checkbox */
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+    </style>
+</head>
+<body class="bg-gray-50 bg-pattern min-h-screen py-10 px-4 sm:px-6 lg:px-8">
+
+    <div class="max-w-4xl mx-auto">
+        <!-- Header -->
+        <div class="text-center mb-8 flex flex-col items-center">
+            <img src="https://i.ibb.co.com/gb2sw64H/Logo-SD-PLUS-RAHMAT.png" alt="Logo SD Plus Rahmat" class="h-24 mb-4 object-contain">
+            <h1 class="text-3xl font-bold text-blue-800 mb-2">Evaluasi & Rekomendasi Program SDM</h1>
+            <h2 class="text-lg text-gray-700 font-medium">SD Plus Rahmat Kota Kediri</h2>
+            <p class="text-sm text-gray-500 mt-1">Tahun Pelajaran 2025/2026 & 2026/2027</p>
+        </div>
+
+        <!-- Form Card -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
+            <div class="bg-blue-700 px-6 py-4">
+                <p class="text-blue-50 text-sm">
+                    Assalamu'alaikum Ustadz/dzah. Mohon kesediaannya untuk mengisi formulir ini sebagai bahan evaluasi Tim Pengembang SDM tahun ini, dan perencanaan program tahun depan.
+                </p>
+            </div>
+
+            <form id="sdmForm" class="p-6 sm:p-8 space-y-10">
+                
+                <!-- Section 1: Identitas -->
+                <div>
+                    <h3 class="text-lg font-bold text-blue-800 border-b-2 border-blue-100 pb-2 mb-4">1. Identitas Diri</h3>
+                    <div class="grid grid-cols-1 gap-6">
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-1">Nama Lengkap (beserta gelar)</label>
+                            <input type="text" name="nama" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors" placeholder="Cth: Ustadz Fulan, S.Pd.">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Mengajar Kelas <span class="text-xs text-gray-500 font-normal">(Bisa pilih lebih dari satu)</span></label>
+                            <!-- Wadah Checkbox Kelas (di-generate oleh Javascript) -->
+                            <div id="kelasContainer" class="bg-gray-50 border border-gray-200 rounded-lg p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-h-60 overflow-y-auto custom-scrollbar">
+                                <!-- Checkbox di sini -->
+                            </div>
+                            <input type="hidden" name="kelas" id="kelasHidden" required>
+                            <p id="kelasError" class="text-red-500 text-xs mt-1 hidden">Mohon pilih minimal satu kelas.</p>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-1">Mata Pelajaran</label>
+                            <input type="text" name="mapel" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors" placeholder="Cth: PAI / Guru Kelas / PJOK / Bahasa Inggris">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Info Program Kerja -->
+                <div class="bg-blue-50 border border-blue-200 rounded-xl p-5 sm:p-6 my-8">
+                    <h4 class="text-md font-bold text-blue-800 mb-3 flex items-center">
+                        <svg class="w-5 h-5 mr-2 text-yellow-500" fill="currentColor" viewBox="0 0 20 20"><path d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM5 10a1 1 0 01-1 1H3a1 1 0 110-2h1a1 1 0 011 1zM8 16v-1h4v1a2 2 0 11-4 0zM12 14c.015-.34.208-.646.477-.859a4 4 0 10-4.954 0c.27.213.462.519.476.859h4.002z"></path></svg>
+                        Kilas Balik Program Kerja Pengembang SDM (TP 2025/2026)
+                    </h4>
+                    <p class="text-sm text-gray-700 mb-4">Sebagai pengingat sebelum mengisi evaluasi, berikut adalah 3 program utama kita di tahun ini:</p>
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-yellow-400">
+                            <h5 class="font-bold text-gray-800 text-sm mb-1">1. Pelatihan Guru</h5>
+                            <p class="text-xs text-gray-600 leading-relaxed">Kegiatan pelatihan untuk peningkatan kompetensi (Kurikulum Merdeka, strategi kekinian, teknologi digital, pembelajaran berbasis data). Dilaksanakan 2x sebulan (Sabtu Pekan 2/3/4).</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-yellow-400">
+                            <h5 class="font-bold text-gray-800 text-sm mb-1">2. Penguatan Komunitas Belajar Jenjang</h5>
+                            <p class="text-xs text-gray-600 leading-relaxed">Forum kolaboratif guru paralel/rumpun mapel rutin untuk berbagi praktik baik, menyusun perangkat ajar, dan mencari solusi inovatif pembelajaran.</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-yellow-400">
+                            <h5 class="font-bold text-gray-800 text-sm mb-1">3. Pendampingan Guru / Komunitas Belajar</h5>
+                            <p class="text-xs text-gray-600 leading-relaxed">Fasilitasi terstruktur oleh tim SDM guna mendampingi guru dalam menerapkan pembelajaran berdiferensiasi dan refleksi praktik pembelajaran kontekstual.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 2: Evaluasi Program -->
+                <div>
+                    <h3 class="text-lg font-bold text-blue-800 border-b-2 border-blue-100 pb-2 mb-4">2. Evaluasi Program (TP 2025/2026)</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-800 mb-2">
+                                A. Seberapa efektif program pelatihan/pengembangan SDM tahun ini dalam membantu meningkatkan kualitas dan kompetensi mengajar Anda? Berikan alasannya.
+                            </label>
+                            <textarea name="eval1" required rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors text-sm"></textarea>
+                            <p class="text-xs text-gray-500 mt-1 italic"><span class="font-medium text-gray-600">Contoh Isian:</span> Sangat efektif. Materi pemanfaatan teknologi digital langsung bisa saya praktikkan untuk membuat kuis interaktif yang membuat siswa lebih antusias.</p>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-800 mb-2">
+                                B. Dari ketiga program di atas, program atau kegiatan apa yang dirasa <strong>paling bermanfaat</strong> bagi Anda di tahun ini? Mengapa?
+                            </label>
+                            <textarea name="eval2" required rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors text-sm"></textarea>
+                            <p class="text-xs text-gray-500 mt-1 italic"><span class="font-medium text-gray-600">Contoh Isian:</span> Penguatan Komunitas Belajar Jenjang. Karena saya bisa langsung berdiskusi dan bertukar perangkat ajar dengan guru paralel, beban mengajar jadi lebih ringan dan terarah.</p>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-800 mb-2">
+                                C. Apakah ada kendala, kekurangan, atau hal yang kurang efektif dari program SDM tahun ini yang perlu diperbaiki?
+                            </label>
+                            <textarea name="eval3" required rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors text-sm"></textarea>
+                            <p class="text-xs text-gray-500 mt-1 italic"><span class="font-medium text-gray-600">Contoh Isian:</span> Pelatihan di hari Sabtu terkadang menyita waktu persiapan akhir pekan. Mungkin jadwalnya bisa lebih dipadatkan atau divariasi dengan pelatihan mandiri secara online (video).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 3: Rekomendasi Program -->
+                <div>
+                    <h3 class="text-lg font-bold text-blue-800 border-b-2 border-blue-100 pb-2 mb-4">3. Rekomendasi Program (TP 2026/2027)</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-800 mb-2">
+                                A. Keterampilan atau pengetahuan spesifik apa yang Ustadz/dzah rasa paling butuh untuk dilatih/dikembangkan pada tahun ajaran depan?
+                            </label>
+                            <textarea name="rek1" required rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors text-sm"></textarea>
+                            <p class="text-xs text-gray-500 mt-1 italic"><span class="font-medium text-gray-600">Contoh Isian:</span> Saya membutuhkan pelatihan tingkat lanjut tentang cara membuat media ajar berbasis AI, serta pelatihan manajemen kelas untuk menangani siswa dengan hiperaktif.</p>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-800 mb-2">
+                                B. Apakah ada usulan bentuk kegiatan atau ide program baru untuk Tim Pengembang SDM di tahun ajaran depan?
+                            </label>
+                            <textarea name="rek2" required rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors text-sm"></textarea>
+                            <p class="text-xs text-gray-500 mt-1 italic"><span class="font-medium text-gray-600">Contoh Isian:</span> Usul diadakan kegiatan "Guru Berbagi" bulanan, di mana satu orang guru menceritakan satu metode sukses di kelasnya dalam sesi singkat 15 menit sebelum rapat rutin.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submit Area -->
+                <div class="pt-6 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <p class="text-xs text-gray-500 text-center sm:text-left">Pastikan semua data terisi dengan baik.<br/>Masukan Ustadz/dzah sangat berharga.</p>
+                    <button type="submit" id="submitBtn" class="w-full sm:w-auto bg-blue-700 hover:bg-blue-800 text-white font-medium py-3 px-8 rounded-lg transition-colors flex items-center justify-center shadow-lg">
+                        <span>Kirim Evaluasi</span>
+                        <svg id="loadingIcon" class="animate-spin ml-2 h-4 w-4 text-white hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                    </button>
+                </div>
+            </form>
+
+            <!-- Success Message (Hidden by default) -->
+            <div id="successMessage" class="hidden p-12 text-center bg-white">
+                <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-green-100 mb-6">
+                    <svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-800 mb-2">Jazakumullah Khairan!</h3>
+                <p class="text-gray-600 max-w-md mx-auto">Formulir evaluasi dan rekomendasi Ustadz/dzah telah berhasil dikirim. Semoga menjadi amal jariyah demi kemajuan SD Plus Rahmat.</p>
+                <button onclick="window.location.reload()" class="mt-8 px-6 py-2 border border-blue-600 text-blue-700 font-medium rounded-lg hover:bg-blue-50 transition">Isi form lagi</button>
+            </div>
+        </div>
+        
+        <div class="text-center mt-8 text-sm text-gray-400">
+            &copy; 2026 Tim Pengembang SDM SD Plus Rahmat
+        </div>
+    </div>
+
+    <script>
+        // MASUKKAN URL WEB APP GOOGLE APPS SCRIPT DI SINI
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyqD7AiHYMjMqSS3YiTNklW1doavCXaD0VZ1-G2WQQ3xjh7Wo9Ig1ccu2Enr-TxdXo/exec'; 
+        
+        // --- LOGIC MEMBUAT CHECKBOX KELAS (1A-1E sampai 6A-6E) ---
+        const kelasContainer = document.getElementById('kelasContainer');
+        const grades = [1, 2, 3, 4, 5, 6];
+        const sections = ['A', 'B', 'C', 'D', 'E'];
+        
+        grades.forEach(grade => {
+            // Buat grup per jenjang kelas (misal: Kelompok Kelas 1)
+            const groupDiv = document.createElement('div');
+            groupDiv.className = "flex flex-col gap-1";
+            
+            const groupLabel = document.createElement('div');
+            groupLabel.className = "text-xs font-bold text-gray-400 mb-1 border-b pb-1";
+            groupLabel.textContent = `Kelas ${grade}`;
+            groupDiv.appendChild(groupLabel);
+
+            const checkGrid = document.createElement('div');
+            checkGrid.className = "grid grid-cols-2 gap-2";
+
+            sections.forEach(sec => {
+                const className = `${grade}${sec}`;
+                
+                const label = document.createElement('label');
+                label.className = "inline-flex items-center cursor-pointer hover:bg-blue-50 p-1 rounded transition";
+                
+                const input = document.createElement('input');
+                input.type = "checkbox";
+                input.value = className;
+                input.className = "kelas-cb w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500";
+                
+                const span = document.createElement('span');
+                span.className = "ml-2 text-sm text-gray-700";
+                span.textContent = className;
+                
+                label.appendChild(input);
+                label.appendChild(span);
+                checkGrid.appendChild(label);
+            });
+            
+            groupDiv.appendChild(checkGrid);
+            kelasContainer.appendChild(groupDiv);
+        });
+        // ---------------------------------------------------------
+
+        const form = document.forms['sdmForm'];
+        const btnSubmit = document.getElementById('submitBtn');
+        const loadingIcon = document.getElementById('loadingIcon');
+        const successMessage = document.getElementById('successMessage');
+        const kelasHidden = document.getElementById('kelasHidden');
+        const kelasError = document.getElementById('kelasError');
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+
+            // Validasi Checkbox Kelas
+            const selectedKelas = Array.from(document.querySelectorAll('.kelas-cb:checked'))
+                                       .map(cb => cb.value)
+                                       .join(', '); // Gabungkan semua kelas yang dipilih, misal "1A, 2B"
+            
+            if (!selectedKelas) {
+                kelasError.classList.remove('hidden');
+                kelasContainer.classList.add('border-red-300');
+                kelasContainer.scrollIntoView({ behavior: "smooth", block: "center" });
+                return;
+            } else {
+                kelasError.classList.add('hidden');
+                kelasContainer.classList.remove('border-red-300');
+                kelasHidden.value = selectedKelas; // Masukkan ke input tersembunyi
+            }
+
+            // Validasi URL Script
+            if(scriptURL === 'MASUKKAN_URL_WEB_APP_DI_SINI') {
+                alert("Peringatan: URL Apps Script belum dimasukkan ke dalam kode HTML. Silakan ganti const scriptURL terlebih dahulu.");
+                return;
+            }
+
+            // Tampilkan state loading
+            btnSubmit.disabled = true;
+            btnSubmit.classList.add('opacity-75', 'cursor-not-allowed');
+            loadingIcon.classList.remove('hidden');
+
+            // Ambil data form
+            const formData = new FormData(form);
+
+            // Kirim ke Google Apps Script
+            fetch(scriptURL, { method: 'POST', body: formData})
+                .then(response => {
+                    form.classList.add('hidden');
+                    successMessage.classList.remove('hidden');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                })
+                .catch(error => {
+                    console.error('Error!', error.message);
+                    alert('Terjadi kesalahan saat mengirim data. Pastikan koneksi internet stabil dan coba lagi.');
+                })
+                .finally(() => {
+                    btnSubmit.disabled = false;
+                    btnSubmit.classList.remove('opacity-75', 'cursor-not-allowed');
+                    loadingIcon.classList.add('hidden');
+                });
+        });
+    </script>
+</body>
+</html>
